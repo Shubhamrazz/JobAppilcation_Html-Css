@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!-- <form action="">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value=""><br>
+        <label for="lname">Last name:</label><br>
+        <input for="text" id="lname" name="lname" value=""><br><br>
+        <input text="submit" value="Submit">
+      </form> -->
+       
+      
+<!-- Checked Box(In this we can choose multiple element) -->
+<!-- <form>
+ <input type="checkbox" id="place1" name="place1" value="Rajasthan">
+ <label for="place1">I had visited Rajasthan</label><br>
+ <input type="checkbox" id="place2" name="place2" value="Odisha">
+ <label for="place2">I had visited Odisha</label><br>
+ <input type="checkbox" id="place3" name="place3" value="Kerela">
+ <label for="place3">I had visited Kerela</label><br><br>
+</form> -->
+
+<!-- Radio button(Choose Fab Subject) -->
+<form>
+  <input type="radio" id="maths" name="fav_subject" value="Maths">
+  <label for="maths">Maths</label><br>
+  <input type="radio" id="physics" name="fav_subject" value="Physics">
+  <label for="physics">Physics</label><br>
+  <input type="radio" id="chemistry" name="fav_subject" value="Chemistry">
+  <label for="chemistry">Chemistry</label><br>
+  <p id="result">Value of selected radio button:</p>
+</form>
+      <script>
+        let radioButtons = document.querySelectorAll("input[name='subject']");
+        let result=document.getElementById("result");
+        let findSelected=() => {
+          let selected = document.querySelector("input[name='fruit']:checked").value;
+          result.textContent="Value of selected radio button: ${selected}";
+          //console.log(selected)
+        }
+        
+        radioButtons.forEach(radioButtons =>{
+          radioButtons.addEventListner("change",findSelected);
+        })
+
+        findSelected();
+      </script>
+</body>
+</html>
